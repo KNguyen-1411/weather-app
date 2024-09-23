@@ -119,22 +119,15 @@ export interface IUvIndexData {
     timezone: string;
     timezone_offset: number;
     elevation: number;
-    daily: Array<{
-        time: string;
-        uv_index_max: number;
-    }>;
+    daily: {
+        time: Array<string>;
+        uv_index_max: Array<number>;
+    };
 }
 
 export interface IGeocodeData {
-    results: Array<{
-        name: string;
-        local_names: {
-            vi?: string;
-            en?: string;
-        };
+    data: {
         lat: number;
         lon: number;
-        country: string;
-        state?: string;
-    }>;
+    };
 }

@@ -7,21 +7,20 @@ import {
     IGeocodeData,
 } from '@/types/global';
 import dynamic from 'next/dynamic';
-import WeatherMiniWidget from '../widgets/WeatherMiniWidget';
-import SearchCity from '../UI/SearchCity';
-import { Card } from '../UI/card';
-import SunsetWidget from '../widgets/SunsetWidget';
-import WindWidget from '../widgets/WindWidget';
-import UvIndexWidget from '../widgets/UvIndexWidget';
-import LocationWidget from '../widgets/LocationWidget';
-import FeelsLikeWidget from '../widgets/FeelsLikeWidget';
-import HumidityWidget from '../widgets/HumidityWidget';
-import PressureWidget from '../widgets/PressureWidget';
-import AirPollutionWidget from '../widgets/AirPollutionWidget';
-import VisibilityWidget from '../widgets/VisibilityWidget';
+import SearchCity from '@/components/UI/SearchCity';
+import { Card } from '@/components/UI/card';
+import WindWidget from '@/components/widgets/WindWidget';
+import SunsetWidget from '@/components/widgets/SunsetWidget';
+import UvIndexWidget from '@/components/widgets/UvIndexWidget';
+import LocationWidget from '@/components/widgets/LocationWidget';
+import HumidityWidget from '@/components/widgets/HumidityWidget';
+import PressureWidget from '@/components/widgets/PressureWidget';
+import FeelsLikeWidget from '@/components/widgets/FeelsLikeWidget';
+import VisibilityWidget from '@/components/widgets/VisibilityWidget';
+import WeatherMiniWidget from '@/components/widgets/WeatherMiniWidget';
+import AirPollutionWidget from '@/components/widgets/AirPollutionWidget';
 import { useConvertDataWeather } from '@/hooks/useConvertDataWeather';
-const Map = dynamic(() => import('../widgets/Map'), { ssr: false });
-
+const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 interface StartProps {
     dataWeather: IWeatherData;
     dataBaseWeather: IWeatherBaseData;
@@ -37,12 +36,9 @@ export default function Start({
     dataAirPollution,
 }: StartProps) {
     const { data, loading } = useConvertDataWeather({ data: dataWeather });
-    if (!loading) {
-        console.log(data);
-    }
     return (
         <div className="App-main container mx-auto">
-            <header className="mt-2 mb-4">
+            <header className="mt-2 mb-4 flex justify-end">
                 <SearchCity />
             </header>
             <main>
@@ -104,11 +100,11 @@ export default function Start({
                         </Card>
                     </div>
                     <div className="col-span-2 row-span-5 col-start-10 row-start-7">
-                        <Card>pollution location</Card>
+                        <Card>top location</Card>
                     </div>
                     <div className="col-span-6 row-span-5 col-start-4 row-start-7">
                         <Card>
-                            <Map position={[107.6, 16.4667]} />
+                            <Map data={dataGeocode} />
                         </Card>
                     </div>
                 </div>

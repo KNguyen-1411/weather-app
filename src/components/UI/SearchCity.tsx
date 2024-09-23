@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Input } from './input';
+import { Button } from './button';
 
 export default function SearchCity() {
     const [city, setCity] = useState('');
@@ -28,13 +30,17 @@ export default function SearchCity() {
     return (
         <div>
             <form onSubmit={handleSearch}>
-                <input
-                    type="text"
-                    placeholder="Enter city name"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
-                <button type="submit">Search</button>
+                <div className="flex w-96 items-center space-x-2">
+                    <Input
+                        type="text"
+                        placeholder="Enter city name"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                    />
+                    <Button type="submit" variant={'secondary'}>
+                        Search
+                    </Button>
+                </div>
             </form>
         </div>
     );

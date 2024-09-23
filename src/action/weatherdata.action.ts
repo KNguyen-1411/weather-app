@@ -131,6 +131,6 @@ export const getGeocodeData = async ({ city }: { city: string }) => {
     return {
         ok: response.ok,
         status: response.status,
-        ...data,
+        data: { lat: data[0].lat, lon: data[0].lon },
     };
 };

@@ -7,7 +7,7 @@ interface LocationWidgetProps {
 export default function LocationWidget({ data }: LocationWidgetProps) {
     return (
         <div>
-            {data[0].lat} {data[0].lon}
+            {data.data.lat} {data.data.lon}
         </div>
     );
 }
