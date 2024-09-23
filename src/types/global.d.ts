@@ -114,3 +114,35 @@ export interface IAirPollutionData {
         },
     ];
 }
+
+export interface IUvIndexData {
+    latitude: number;
+    longitude: number;
+    generationtime_ms: number;
+    utc_offset_seconds: number;
+    timezone: string;
+    timezone_offset: number;
+    elevation: number;
+    daily_unít: {
+        time: string;
+        uv_index_max: number;
+    };
+    daily: {
+        time: [string];
+        uv_index_max: [number];
+    };
+}
+
+export interface IGeocodeData {
+    0: {
+        name: string;
+        local_names: {
+            vi: string;
+            en: string;
+        };
+        lat: number;
+        lon: number;
+        country: string;
+        state: string;
+    };
+}

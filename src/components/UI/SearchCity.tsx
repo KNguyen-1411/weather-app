@@ -36,7 +36,6 @@ export default function SearchCity() {
                 />
                 <button type="submit">Search</button>
             </form>
-            <div>SearchCity</div>
         </div>
     );
 }

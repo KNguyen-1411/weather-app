@@ -26,13 +26,8 @@ const FlyTo = ({
     return null;
 };
 
-// Main Map component
 export default function Map({ position }: { position: [number, number] }) {
     const [isClient, setIsClient] = useState(false);
-    const [activeCityCoords, setActiveCityCoords] = useState<{
-        lat: number;
-        lon: number;
-    } | null>(null);
 
     useEffect(() => {
         setIsClient(true);
@@ -41,29 +36,29 @@ export default function Map({ position }: { position: [number, number] }) {
     if (!isClient) {
         return null;
     }
-    const changePosition = () => {
-        setActiveCityCoords({ lat: 21.0294498, lon: 105.8544441 });
-    };
 
     return (
-        <div className="border">
+        <div
+            className="border"
+            style={{
+                height: '300px',
+                width: '100%',
+            }}
+        >
             <MapContainer
                 center={position}
                 zoom={13}
                 scrollWheelZoom={false}
-                style={{ height: '50vh', width: '50vw' }}
+                style={{ height: '100%', width: '100%' }}
             >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <FlyTo
-                    activeCityCoords={
-                        activeCityCoords || {
-                            lat: position[0],
-                            lon: position[1],
-                        }
-                    }
+                    activeCityCoords={{
+                        lat: position[0],
+                        lon: position[1],
+                    }}
                 />
             </MapContainer>
-            <button onClick={changePosition}>Change Position</button>
         </div>
     );
 }
