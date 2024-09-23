@@ -36,8 +36,10 @@ export default function Start({
     dataUvIndex,
     dataAirPollution,
 }: StartProps) {
-    const dataWeatherConvert = useConvertDataWeather({ data: dataWeather });
-    console.log(dataWeatherConvert);
+    const { data, loading } = useConvertDataWeather({ data: dataWeather });
+    if (!loading) {
+        console.log(data);
+    }
     return (
         <div className="App-main container mx-auto">
             <header className="mt-2 mb-4">

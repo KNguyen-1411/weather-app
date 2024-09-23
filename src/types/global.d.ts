@@ -1,19 +1,18 @@
 export interface ICitySearch {
     city?: string;
 }
+
 export interface IWeatherBaseData {
     coord: {
         lon: number;
         lat: number;
     };
-    weather: [
-        {
-            id: number;
-            main: string;
-            description: string;
-            icon: string;
-        },
-    ];
+    weather: Array<{
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+    }>;
     base: string;
     main: {
         temp: number;
@@ -51,8 +50,8 @@ export interface IWeatherData {
     cod: string;
     message: number;
     cnt: number;
-    list: [
-        dt: number,
+    list: Array<{
+        dt: number;
         main: {
             temp: number;
             feels_like: number;
@@ -63,56 +62,53 @@ export interface IWeatherData {
             grnd_level: number;
             humidity: number;
             temp_kf: number;
-        },
-        weather: [
-            {
-                id: number;
-                main: string;
-                description: string;
-                icon: string;
-            },
-        ],
+        };
+        weather: Array<{
+            id: number;
+            main: string;
+            description: string;
+            icon: string;
+        }>;
         clouds: {
             all: number;
-        },
+        };
         wind: {
             speed: number;
             deg: number;
-        },
-        visibility: number,
-        pop: number,
-        rain: {
+        };
+        visibility: number;
+        pop: number;
+        rain?: {
             '3h': number;
-        },
+        };
         sys: {
             pod: string;
-        },
-        dt_txt: string,
-    ];
+        };
+        dt_txt: string;
+    }>;
 }
+
 export interface IAirPollutionData {
     coord: {
         lon: number;
         lat: number;
     };
-    list: [
-        {
-            main: {
-                aqi: number;
-            };
-            components: {
-                co: number;
-                no: number;
-                no2: number;
-                o3: number;
-                so2: number;
-                pm2_5: number;
-                pm10: number;
-                nh3: number;
-            };
-            dt: number;
-        },
-    ];
+    list: Array<{
+        main: {
+            aqi: number;
+        };
+        components: {
+            co: number;
+            no: number;
+            no2: number;
+            o3: number;
+            so2: number;
+            pm2_5: number;
+            pm10: number;
+            nh3: number;
+        };
+        dt: number;
+    }>;
 }
 
 export interface IUvIndexData {
@@ -123,26 +119,22 @@ export interface IUvIndexData {
     timezone: string;
     timezone_offset: number;
     elevation: number;
-    daily_unít: {
+    daily: Array<{
         time: string;
         uv_index_max: number;
-    };
-    daily: {
-        time: [string];
-        uv_index_max: [number];
-    };
+    }>;
 }
 
 export interface IGeocodeData {
-    0: {
+    results: Array<{
         name: string;
         local_names: {
-            vi: string;
-            en: string;
+            vi?: string;
+            en?: string;
         };
         lat: number;
         lon: number;
         country: string;
-        state: string;
-    };
+        state?: string;
+    }>;
 }
