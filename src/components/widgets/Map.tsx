@@ -42,7 +42,6 @@ const Map = ({ data }: MapProps) => {
     }
     const location = data.data;
     const position: [number, number] = [location.lat, location.lon];
-
     return (
         <div
             className="border"
@@ -52,7 +51,6 @@ const Map = ({ data }: MapProps) => {
             }}
         >
             <MapContainer
-                key={location.lat + location.lon}
                 center={position}
                 zoom={ZoomMap}
                 scrollWheelZoom={false}

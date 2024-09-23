@@ -50,20 +50,14 @@ export const getWeatherBaseData = async ({ city }: { city: string }) => {
  * Get data air pollution now
  * @param city - city name
  */
-
 export const getAirPollutionData = async ({ city }: { city: string }) => {
-    const getLocation = await fetch(
-        `${globalConfig.ApiGeoUrl}direct?appid=${globalConfig.ApiKey}&q=${city}`,
-        {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        },
-    );
-    const location = await getLocation.json();
+    const location = await getGeocodeData({ city });
+
+    const lat = location.ok && location.data ? location.data.lat : 0;
+    const lon = location.ok && location.data ? location.data.lon : 0;
+
     const response = await fetch(
-        `${globalConfig.ApiBaseUrl}air_pollution?appid=${globalConfig.ApiKey}&lat=${location[0].lat}&lon=${location[0].lon}`,
+        `${globalConfig.ApiBaseUrl}air_pollution?appid=${globalConfig.ApiKey}&lat=${lat}&lon=${lon}`,
         {
             method: 'GET',
             headers: {
@@ -83,20 +77,14 @@ export const getAirPollutionData = async ({ city }: { city: string }) => {
  * Get data uv index 7days
  * @param city - city name
  */
-
 export const getUvIndexData = async ({ city }: { city: string }) => {
-    const getLocation = await fetch(
-        `${globalConfig.ApiGeoUrl}direct?appid=${globalConfig.ApiKey}&q=${city}`,
-        {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        },
-    );
-    const location = await getLocation.json();
+    const location = await getGeocodeData({ city });
+
+    const lat = location.ok && location.data ? location.data.lat : 0;
+    const lon = location.ok && location.data ? location.data.lon : 0;
+
     const response = await fetch(
-        `${globalConfig.ApiMeteo}?latitude=${location[0].lat}&longitude=${location[0].lon}&daily=uv_index_max&timezone=Asia%2FBangkok`,
+        `${globalConfig.ApiMeteo}?latitude=${lat}&longitude=${lon}&daily=uv_index_max&timezone=Asia%2FBangkok`,
         {
             method: 'GET',
             headers: {
@@ -116,7 +104,6 @@ export const getUvIndexData = async ({ city }: { city: string }) => {
  * Get data geocode
  * @param city - city name
  */
-
 export const getGeocodeData = async ({ city }: { city: string }) => {
     const response = await fetch(
         `${globalConfig.ApiGeoUrl}direct?appid=${globalConfig.ApiKey}&q=${city}`,
@@ -127,10 +114,19 @@ export const getGeocodeData = async ({ city }: { city: string }) => {
             },
         },
     );
+
     const data = await response.json();
-    return {
-        ok: response.ok,
-        status: response.status,
-        data: { lat: data[0].lat, lon: data[0].lon },
-    };
+    if (response.ok && data.length > 0) {
+        return {
+            ok: response.ok,
+            status: response.status,
+            data: { lat: data[0].lat || 0, lon: data[0].lon || 0 },
+        };
+    } else {
+        return {
+            ok: false,
+            status: response.status,
+            data: { lat: 0, lon: 0 },
+        };
+    }
 };

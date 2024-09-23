@@ -12,10 +12,11 @@ interface HomeProps {
     searchParams: ICitySearch;
 }
 
-const DEFAULT_CITY = 'Hue';
-
+// let DEFAULT_CITY = 'Hue';
+let CityRes = 'Hue';
 export default async function HomeIndex({ searchParams }: HomeProps) {
-    const city = searchParams.city || DEFAULT_CITY;
+    let searchOK: boolean = false;
+    const city = searchParams.city || CityRes;
     const fetchData = async (city: string) => {
         const [
             dataBaseWeather,
@@ -58,11 +59,14 @@ export default async function HomeIndex({ searchParams }: HomeProps) {
             dataGeocode,
             dataUvIndex,
             dataAirPollution,
-        } = await fetchData(DEFAULT_CITY));
+        } = await fetchData(CityRes));
+    } else {
+        CityRes = city;
+        searchOK = true;
     }
-
     return (
         <Start
+            SearchOK={searchOK}
             dataWeather={dataWeather}
             dataBaseWeather={dataBaseWeather}
             dataGeocode={dataGeocode}

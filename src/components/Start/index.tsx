@@ -20,8 +20,10 @@ import VisibilityWidget from '@/components/widgets/VisibilityWidget';
 import WeatherMiniWidget from '@/components/widgets/WeatherMiniWidget';
 import AirPollutionWidget from '@/components/widgets/AirPollutionWidget';
 import { useConvertDataWeather } from '@/hooks/useConvertDataWeather';
+import { useEffect } from 'react';
 const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 interface StartProps {
+    SearchOK?: boolean;
     dataWeather: IWeatherData;
     dataBaseWeather: IWeatherBaseData;
     dataGeocode: IGeocodeData;
@@ -29,6 +31,7 @@ interface StartProps {
     dataAirPollution: IAirPollutionData;
 }
 export default function Start({
+    SearchOK,
     dataWeather,
     dataBaseWeather,
     dataGeocode,
@@ -36,6 +39,11 @@ export default function Start({
     dataAirPollution,
 }: StartProps) {
     const { data, loading } = useConvertDataWeather({ data: dataWeather });
+    useEffect(() => {
+        if (!SearchOK) {
+            alert('Tìm kiếm không thành công!');
+        }
+    }, [SearchOK]);
     return (
         <div className="App-main container mx-auto">
             <header className="mt-2 mb-4 flex justify-end">
