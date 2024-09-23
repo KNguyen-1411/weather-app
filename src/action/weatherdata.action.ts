@@ -111,3 +111,26 @@ export const getUvIndexData = async ({ city }: { city: string }) => {
         ...data,
     };
 };
+
+/**
+ * Get data geocode
+ * @param city - city name
+ */
+
+export const getGeocodeData = async ({ city }: { city: string }) => {
+    const response = await fetch(
+        `${globalConfig.ApiGeoUrl}direct?appid=${globalConfig.ApiKey}&q=${city}`,
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        },
+    );
+    const data = await response.json();
+    return {
+        ok: response.ok,
+        status: response.status,
+        ...data,
+    };
+};
