@@ -4,5 +4,5 @@ interface HumidityWidgetProps {
     data: IWeatherBaseData;
 }
 export default function HumidityWidget({ data }: HumidityWidgetProps) {
-    return <div>{data.main.humidity}</div>;
+    return <div>{data.main.humidity} %</div>;
 }

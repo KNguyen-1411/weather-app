@@ -1,4 +1,5 @@
 import { IGeocodeData } from '@/types/global';
+import { ProgressClone } from '../UI/progressCLone';
 
 interface LocationWidgetProps {
     data: IGeocodeData;
@@ -7,7 +8,7 @@ interface LocationWidgetProps {
 export default function LocationWidget({ data }: LocationWidgetProps) {
     return (
         <div>
-            {data.data.lat} {data.data.lon}
+            Latitude: {data.data.lat}, Longitude: {data.data.lon}
         </div>
     );
 }

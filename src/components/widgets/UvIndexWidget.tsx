@@ -8,6 +8,7 @@ export default function UvIndexWidget({ data }: UvIndexWidgetProps) {
     return (
         <div>
             <Progress value={data.daily.uv_index_max[0] * 5} />
+            <div>{data.daily.uv_index_max[0]}</div>
         </div>
     );
 }

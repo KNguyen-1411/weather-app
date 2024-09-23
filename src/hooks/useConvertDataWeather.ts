@@ -60,17 +60,17 @@ export const useConvertDataWeather = ({ data }: IWeatherProps) => {
     const [convertedData, setConvertedData] = useState<IWeatherData | null>(
         null,
     );
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
     useEffect(() => {
         if (data) {
             const newData = setData(data);
             setConvertedData(newData);
         }
-        setLoading(false);
+        setLoading(true);
     }, [data]);
 
     return {
         loading,
-        data: convertedData,
+        dataWeatherConvert: convertedData,
     };
 };
