@@ -3,6 +3,9 @@ import { IWeatherBaseData } from '@/types/global';
 interface WindWidgetProps {
     data: IWeatherBaseData;
 }
+
+const color: string = '#fff';
+
 export default function WindWidget({ data }: WindWidgetProps) {
     return (
         <>
@@ -13,16 +16,16 @@ export default function WindWidget({ data }: WindWidgetProps) {
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 331 331"
-                    className="absolute dark:invert"
+                    className="absolute"
                 >
                     <g fill="none" fillRule="evenodd" opacity=".401">
                         <path
-                            fill="#fff"
+                            fill={color}
                             d="M11.5 0 23 23H0z"
                             transform="translate(154 31)"
                         />
                         <path
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                             strokeWidth={2}
@@ -30,7 +33,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             transform="translate(154 31)"
                         />
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -40,7 +43,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -50,7 +53,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -60,7 +63,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -70,7 +73,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -80,7 +83,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -90,7 +93,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -100,7 +103,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -110,7 +113,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -120,7 +123,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                             strokeWidth={2}
@@ -131,7 +134,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -141,7 +144,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -151,7 +154,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -161,7 +164,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -171,7 +174,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -181,7 +184,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -191,7 +194,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -201,7 +204,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -211,7 +214,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -221,7 +224,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                             strokeWidth={2}
@@ -232,7 +235,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -242,7 +245,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -252,7 +255,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -262,7 +265,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -272,7 +275,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -282,7 +285,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -292,7 +295,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -302,7 +305,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -312,7 +315,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -322,7 +325,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                             strokeWidth={2}
@@ -333,7 +336,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -343,7 +346,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -353,7 +356,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -363,7 +366,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -373,7 +376,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -383,7 +386,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -393,7 +396,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -403,7 +406,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -413,7 +416,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -423,7 +426,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                             strokeWidth={2}
@@ -434,7 +437,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -444,7 +447,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -454,7 +457,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -464,7 +467,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -474,7 +477,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -484,7 +487,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -494,7 +497,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -504,7 +507,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -514,7 +517,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -524,7 +527,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                             strokeWidth={2}
@@ -535,7 +538,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -545,7 +548,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -555,7 +558,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -565,7 +568,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -575,7 +578,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -585,7 +588,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -595,7 +598,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -605,7 +608,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -615,7 +618,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            stroke="#fff"
+                            stroke={color}
                             strokeLinecap="square"
                             strokeLinejoin="bevel"
                         >
@@ -625,7 +628,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                             />
                         </g>
                         <g
-                            fill="#fff"
+                            fill={color}
                             fontFamily="Arial-BoldMT, Arial"
                             fontSize={36}
                             fontWeight="bold"
