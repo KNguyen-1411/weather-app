@@ -1,4 +1,5 @@
 import { IWeatherBaseData } from '@/types/global';
+import { CardContent, CardFooter, CardHeader, CardTitle } from '../UI/card';
 
 interface SunsetWidgetProps {
     data: IWeatherBaseData;
@@ -14,23 +15,40 @@ const convertUnixTime = (unixTime: number) => {
 
 export default function SunsetWidget({ data }: SunsetWidgetProps) {
     return (
-        // <div>
-        //     <strong>Sunset Time:</strong> {convertUnixTime(data.sys.sunset)}
-        //     <p>sunrise {convertUnixTime(data.sys.sunrise)}</p>
-        // </div>
-        <div>
-            <p>Mặt trời lặn </p>
-            <div className="min-h-20 flex flex-col justify-center">
-                <hr />
-            </div>
-            {/* <svg width="200" height="200">
-                <path
-                    d="M 50 300 Q 200 50 350 300"
-                    stroke="blue"
-                    strokeWidth="3"
-                    fill="transparent"
-                />
-            </svg> */}
-        </div>
+        <>
+            <CardHeader>
+                <CardTitle>
+                    <p>Mặt trời lặn </p>
+                </CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 relative">
+                <div className="flex flex-col  px-4 justify-between h-full">
+                    <p className="text-2xl font-bold">
+                        {convertUnixTime(data.sys.sunset)}
+                    </p>
+                </div>
+                <div className="flex flex-col justify-center absolute top-0 opacity-40">
+                    <svg width="100%" height="80">
+                        <path
+                            d="M 0 80 Q 120 -10, 170 50 T 400 100"
+                            stroke="white"
+                            strokeWidth="2"
+                            fill="transparent"
+                        />
+                        <line
+                            x1="0"
+                            y1="60"
+                            x2="100%"
+                            y2="60"
+                            stroke="white"
+                            strokeWidth="2"
+                        />
+                    </svg>
+                </div>
+            </CardContent>
+            <CardFooter>
+                Mặt trời lặn {convertUnixTime(data.sys.sunrise)}
+            </CardFooter>
+        </>
     );
 }

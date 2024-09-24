@@ -46,7 +46,7 @@ const Map = ({ data }: MapProps) => {
         <div
             className="border"
             style={{
-                height: '400px',
+                height: '100%',
                 width: '100%',
             }}
         >

@@ -24,6 +24,7 @@ import { useConvertDataWeather } from '@/hooks/useConvertDataWeather';
 import WeatherMapMiniWidget from '@/components/widgets/WeatherMapMiniWidget';
 const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 import React from 'react';
+import TopCityWidget from '../widgets/TopCityWidget';
 interface StartProps {
     SearchOK?: boolean;
     dataWeather: IWeatherData;
@@ -125,10 +126,12 @@ export default function Start({
                         </Card>
                     </div>
                     <div className="col-span-2 row-span-5 col-start-10 row-start-7">
-                        <Card>top location</Card>
+                        <Card>
+                            <TopCityWidget />
+                        </Card>
                     </div>
                     <div className="col-span-6 row-span-5 col-start-4 row-start-7">
-                        <Card>
+                        <Card className="">
                             <Map data={dataGeocode} />
                         </Card>
                     </div>
