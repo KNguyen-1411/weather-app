@@ -18,7 +18,7 @@ const ProgressClone = React.forwardRef<
         {...props}
         style={{
             background:
-                'linear-gradient(90deg, green 0%, rgba(126,212,87,1) 20%,  yellow 60%,red 100%)',
+                'linear-gradient(90deg, #A6E3E9 0%, rgb(126,212,87) 50%,  yellow 100%)',
         }}
     ></ProgressPrimitive.Root>
 ));

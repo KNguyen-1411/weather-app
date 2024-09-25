@@ -19,7 +19,7 @@ export default function PressureWidget({ data }: PressureWidgetProps) {
                 <div>{data.main.pressure} hPa</div>
             </CardContent>
             <CardFooter>
-                <p>Áp suất không khí {Pressure_Cmt(data.main.pressure)}</p>
+                <p>{Pressure_Cmt(data.main.pressure)}</p>
             </CardFooter>
         </>
     );

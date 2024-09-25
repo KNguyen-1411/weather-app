@@ -3,6 +3,7 @@ import { useDate } from '@/hooks/useData';
 import Image from 'next/image';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '../UI/card';
 import { Navigation } from 'lucide-react';
+import NewIcon from '../UI/NewIcon';
 interface WeatherMiniWidgetProps {
     data: IWeatherBaseData;
 }
@@ -24,17 +25,17 @@ export default function WeatherWidget({ data }: WeatherMiniWidgetProps) {
                     <Navigation className="ms-2 w-3" />
                 </div>
             </CardHeader>
-            <CardContent>{data.main.temp.toFixed(0)}°</CardContent>
-            <CardFooter>
-                <div>{capitalizeFirstLetter(data.weather[0].description)}</div>
+            <CardContent className="flex float-col justify-center">
                 <div>
-                    <Image
-                        src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
-                        width={50}
-                        height={50}
-                        alt="icon"
+                    <NewIcon
+                        weatherCode={data.weather[0].id}
+                        className="w-32 h-32"
                     />
                 </div>
+            </CardContent>
+            <CardFooter className="flex flex-col">
+                <div>{data.main.temp.toFixed(0)}°</div>
+                <div>{capitalizeFirstLetter(data.weather[0].description)}</div>
             </CardFooter>
         </>
     );

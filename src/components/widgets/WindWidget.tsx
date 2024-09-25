@@ -6,7 +6,7 @@ interface WindWidgetProps {
     data: IWeatherBaseData;
 }
 
-const color: string = '#fff';
+const color: string = '#000';
 
 export default function WindWidget({ data }: WindWidgetProps) {
     return (
@@ -25,9 +25,9 @@ export default function WindWidget({ data }: WindWidgetProps) {
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 331 331"
-                        className="absolute"
+                        className="absolute dark:invert"
                     >
-                        <g fill="none" fillRule="evenodd" opacity=".401">
+                        <g fill="none" fillRule="evenodd" opacity=".701">
                             <path
                                 fill={color}
                                 d="M11.5 0 23 23H0z"
@@ -669,7 +669,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 331 331"
                         style={{ transform: `rotate(${data.wind.deg}deg)` }}
-                        className="absolute transition-transform ease-in-out will-change-transform white invert opacity-70"
+                        className="absolute transition-transform ease-in-out will-change-transform dark:invert "
                     >
                         <path d="M163 103V57.785c-6.817-1.185-12-7.13-12-14.285 0-8.008 6.492-14.5 14.5-14.5S180 35.492 180 43.5c0 7.155-5.183 13.1-12 14.285V103h-5zm2.5-50a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19zm0 250L151 274h12v-47h5l-.001 47H180l-14.5 29z" />
                     </svg>

@@ -44,7 +44,7 @@ const Map = ({ data }: MapProps) => {
     const position: [number, number] = [location.lat, location.lon];
     return (
         <div
-            className="border"
+            className="border "
             style={{
                 height: '100%',
                 width: '100%',

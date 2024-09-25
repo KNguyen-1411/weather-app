@@ -7,6 +7,12 @@
   --foreground:  #ffffff;
 }
 
+.textOverFlow {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
 @layer base {
   :root {
         --background: 0 0% 100%;

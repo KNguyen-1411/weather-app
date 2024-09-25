@@ -133,10 +133,8 @@ export default function Start({
                             <TopCityWidget />
                         </Card>
                     </div>
-                    <div className="col-span-6 row-span-5 col-start-4 row-start-7">
-                        <Card className="">
-                            <Map data={dataGeocode} />
-                        </Card>
+                    <div className="col-span-6 row-span-5 col-start-4 row-start-7 overflow-hidden rounded-lg border border-slate-500">
+                        <Map data={dataGeocode} />
                     </div>
                 </div>
             </main>

@@ -18,7 +18,7 @@ export default function AirPollutionWidget({ data }: AirPollutionWidgetProps) {
                 <Progress value={data.list[0].main.aqi * 5} />
             </CardContent>
             <CardFooter>
-                <p>Chất lượng không khí {Air_Cmt(data.list[0].main.aqi)}</p>
+                <p>{Air_Cmt(data.list[0].main.aqi)}</p>
             </CardFooter>
         </>
     );

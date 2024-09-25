@@ -17,7 +17,6 @@ export default function SearchCity() {
     const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const params = new URLSearchParams(searchParams.toString());
-
         if (city) {
             params.set('city', city);
         } else {
