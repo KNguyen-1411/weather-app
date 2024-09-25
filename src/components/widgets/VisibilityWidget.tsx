@@ -1,5 +1,7 @@
 import { IWeatherBaseData } from '@/types/global';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '../UI/card';
+import { Visibility_Cmt } from '@/lib/MapCmt';
+import { Eye } from 'lucide-react';
 
 interface VisibilityWidgetProps {
     data: IWeatherBaseData;
@@ -9,13 +11,16 @@ export default function VisibilityWidget({ data }: VisibilityWidgetProps) {
     return (
         <>
             <CardHeader>
-                <CardTitle>Tầm nhìn xa</CardTitle>
+                <CardTitle>
+                    <Eye className="mr-1" />
+                    Tầm nhìn xa
+                </CardTitle>
             </CardHeader>
             <CardContent>
                 <div>{data.visibility / 1000} Km/h</div>
             </CardContent>
             <CardFooter>
-                <p>Độ xa của tầm nhìn</p>
+                <p>{Visibility_Cmt(data.visibility / 1000)}</p>
             </CardFooter>
         </>
     );

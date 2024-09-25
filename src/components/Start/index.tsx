@@ -22,9 +22,11 @@ import AirPollutionWidget from '@/components/widgets/AirPollutionWidget';
 import WeatherMapWidget from '@/components/widgets/WeatherMapWidget';
 import { useConvertDataWeather } from '@/hooks/useConvertDataWeather';
 import WeatherMapMiniWidget from '@/components/widgets/WeatherMapMiniWidget';
+import TopCityWidget from '@/components/widgets/TopCityWidget';
 const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 import React from 'react';
-import TopCityWidget from '../widgets/TopCityWidget';
+import { ToggleTheme } from '@/components/UI/ToogleTheme';
+import { ChartWidget } from '../widgets/ChartWidget';
 interface StartProps {
     SearchOK?: boolean;
     dataWeather: IWeatherData;
@@ -46,19 +48,20 @@ export default function Start({
     });
 
     // Neu tim kiem khong thanh cong!
-    // React.useEffect(() => {
-    //     if (!SearchOK) {
-    //         alert('Tìm kiếm không thành công!');
-    //     }
-    // }, [SearchOK]);
+    React.useEffect(() => {
+        if (!SearchOK) {
+            alert('Tìm kiếm không thành công!');
+        }
+    }, [SearchOK]);
 
     return (
-        <div className="App-main container mx-auto">
+        <div className="App-main container mx-auto my-2">
             <header className="mt-2 mb-4 flex justify-end">
+                <ToggleTheme />
                 <SearchCity />
             </header>
             <main>
-                <div className="grid grid-cols-11 grid-rows-11 gap-4">
+                <div className="grid grid-cols-11 grid-rows-10 gap-4">
                     <div className="col-span-3 row-span-4">
                         <Card>
                             <WeatherWidget data={dataBaseWeather} />
@@ -137,6 +140,7 @@ export default function Start({
                     </div>
                 </div>
             </main>
+            {/* <ChartWidget /> */}
         </div>
     );
 }

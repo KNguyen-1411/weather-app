@@ -2,6 +2,7 @@ import { IWeatherBaseData } from '@/types/global';
 import { useDate } from '@/hooks/useData';
 import Image from 'next/image';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '../UI/card';
+import { Navigation } from 'lucide-react';
 interface WeatherMiniWidgetProps {
     data: IWeatherBaseData;
 }
@@ -14,13 +15,14 @@ export default function WeatherWidget({ data }: WeatherMiniWidgetProps) {
     return (
         <>
             <CardHeader>
-                <CardTitle>
-                    <div className="flex justify-between">
-                        <p>{day}</p>
-                        <p>{time}</p>
-                    </div>
-                    <div>{data.name}</div>
+                <CardTitle className="flex justify-between">
+                    <p>{day}</p>
+                    <p>{time}</p>
                 </CardTitle>
+                <div className="flex items-center">
+                    {data.name}
+                    <Navigation className="ms-2 w-3" />
+                </div>
             </CardHeader>
             <CardContent>{data.main.temp.toFixed(0)}°</CardContent>
             <CardFooter>

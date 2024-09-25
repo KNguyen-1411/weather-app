@@ -1,5 +1,6 @@
 import { IWeatherBaseData } from '@/types/global';
 import { CardContent, CardHeader, CardTitle } from '../UI/card';
+import { Wind } from 'lucide-react';
 
 interface WindWidgetProps {
     data: IWeatherBaseData;
@@ -11,7 +12,10 @@ export default function WindWidget({ data }: WindWidgetProps) {
     return (
         <>
             <CardHeader>
-                <CardTitle>Gió</CardTitle>
+                <CardTitle>
+                    <Wind className="mr-1" />
+                    Gió
+                </CardTitle>
             </CardHeader>
             <CardContent className="px-4 p-0 ">
                 <div className="relative m-auto -mt-5 flex h-[10rem] w-[10rem] items-center justify-center md:-mt-5 md:h-[9rem] md:w-[9rem]">

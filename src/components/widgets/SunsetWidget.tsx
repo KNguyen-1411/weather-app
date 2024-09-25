@@ -1,5 +1,6 @@
 import { IWeatherBaseData } from '@/types/global';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '../UI/card';
+import { Sunset } from 'lucide-react';
 
 interface SunsetWidgetProps {
     data: IWeatherBaseData;
@@ -18,7 +19,8 @@ export default function SunsetWidget({ data }: SunsetWidgetProps) {
         <>
             <CardHeader>
                 <CardTitle>
-                    <p>Mặt trời lặn </p>
+                    <Sunset className="mr-1" />
+                    Mặt trời lặn
                 </CardTitle>
             </CardHeader>
             <CardContent className="p-0 relative">
