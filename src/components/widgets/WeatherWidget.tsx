@@ -25,17 +25,25 @@ export default function WeatherWidget({ data }: WeatherMiniWidgetProps) {
                     <Navigation className="ms-2 w-3" />
                 </div>
             </CardHeader>
-            <CardContent className="flex float-col justify-center">
-                <div>
+            <CardContent className="flex flex-col items-center flex-1">
+                <div className="mb-2">
                     <NewIcon
                         weatherCode={data.weather[0].id}
-                        className="w-32 h-32"
+                        className="w-40 h-40 "
                     />
                 </div>
+                <div className="font-bold text-5xl">
+                    {data.main.temp.toFixed(0)}°
+                </div>
             </CardContent>
-            <CardFooter className="flex flex-col">
-                <div>{data.main.temp.toFixed(0)}°</div>
+            <CardFooter className="flex flex-col items-start">
                 <div>{capitalizeFirstLetter(data.weather[0].description)}</div>
+                <div className="flex">
+                    <p>Low: {data.main.temp_min.toFixed(0)}°</p>
+                    <p className="ms-3">
+                        High: {data.main.temp_max.toFixed(0)}°
+                    </p>
+                </div>
             </CardFooter>
         </>
     );

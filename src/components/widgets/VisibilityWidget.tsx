@@ -17,7 +17,9 @@ export default function VisibilityWidget({ data }: VisibilityWidgetProps) {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <div>{data.visibility / 1000} Km/h</div>
+                <div className="text-3xl font-bold text-center">
+                    {data.visibility / 1000} Km/h
+                </div>
             </CardContent>
             <CardFooter>
                 <p>{Visibility_Cmt(data.visibility / 1000)}</p>

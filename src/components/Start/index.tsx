@@ -26,7 +26,7 @@ import TopCityWidget from '@/components/widgets/TopCityWidget';
 const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 import React from 'react';
 import { ToggleTheme } from '@/components/UI/ToogleTheme';
-import { ChartWidget } from '../widgets/ChartWidget';
+import styles from './Layout.module.css';
 interface StartProps {
     SearchOK?: boolean;
     dataWeather: IWeatherData;
@@ -55,10 +55,10 @@ export default function Start({
     }, [SearchOK]);
 
     return (
-        <div className="App-main container mx-auto my-2">
-            <header className="mt-2 mb-4 flex justify-end">
-                <ToggleTheme />
+        <div className="App-main container mx-auto my-6">
+            <header className="mt-2 mb-6 flex justify-end">
                 <SearchCity />
+                <ToggleTheme />
             </header>
             <main>
                 <div className="grid grid-cols-11 grid-rows-10 gap-4">
@@ -83,7 +83,7 @@ export default function Start({
                         </Card>
                     </div>
                     <div className="col-span-4 row-span-2 col-start-4 row-start-3">
-                        <Card>
+                        <Card className="py-0">
                             {loading && dataWeatherConvert && (
                                 <WeatherMapMiniWidget
                                     data={dataWeatherConvert}
@@ -138,7 +138,6 @@ export default function Start({
                     </div>
                 </div>
             </main>
-            {/* <ChartWidget /> */}
         </div>
     );
 }

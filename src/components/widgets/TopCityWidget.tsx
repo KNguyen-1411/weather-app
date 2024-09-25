@@ -9,7 +9,7 @@ const topCities = [
     'Hà Nội',
     'Thành phố Hồ Chí Minh',
     'Đà Nẵng',
-    'Hải Phòng',
+    'Phan Thiết',
     'Cần Thơ',
     'Vũng Tàu',
     'Nha Trang',

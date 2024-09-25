@@ -16,7 +16,9 @@ export default function PressureWidget({ data }: PressureWidgetProps) {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <div>{data.main.pressure} hPa</div>
+                <div className="text-3xl font-bold text-center">
+                    {data.main.pressure} hPa
+                </div>
             </CardContent>
             <CardFooter>
                 <p>{Pressure_Cmt(data.main.pressure)}</p>

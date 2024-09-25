@@ -15,7 +15,9 @@ export default function HumidityWidget({ data }: HumidityWidgetProps) {
                     Độ ẩm
                 </CardTitle>
             </CardHeader>
-            <CardContent>{data.main.humidity}%</CardContent>
+            <CardContent className="text-3xl font-bold text-center">
+                {data.main.humidity}%
+            </CardContent>
             <CardFooter>
                 <p>{Humidity_Cmt(data.main.humidity)}</p>
             </CardFooter>

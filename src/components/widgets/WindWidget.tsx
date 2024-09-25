@@ -19,7 +19,7 @@ export default function WindWidget({ data }: WindWidgetProps) {
             </CardHeader>
             <CardContent className="px-4 p-0 ">
                 <div className="relative m-auto -mt-5 flex h-[10rem] w-[10rem] items-center justify-center md:-mt-5 md:h-[9rem] md:w-[9rem]">
-                    <div className="absolute text-sm font-semibold">
+                    <div className="absolute text-sm font-bold">
                         {Math.round(data.wind.speed)}m/s
                     </div>
                     <svg

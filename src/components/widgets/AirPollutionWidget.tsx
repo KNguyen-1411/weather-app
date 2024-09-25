@@ -15,7 +15,7 @@ export default function AirPollutionWidget({ data }: AirPollutionWidgetProps) {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <Progress value={data.list[0].main.aqi * 5} />
+                <Progress className="mb-4" value={data.list[0].main.aqi * 5} />
             </CardContent>
             <CardFooter>
                 <p>{Air_Cmt(data.list[0].main.aqi)}</p>

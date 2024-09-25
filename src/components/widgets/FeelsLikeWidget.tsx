@@ -15,7 +15,9 @@ export default function FeelsLikeWidget({ data }: FeelsLikeWidgetProps) {
                     Nhiệt độ cảm nhận
                 </CardTitle>
             </CardHeader>
-            <CardContent>{data.main.feels_like.toFixed(0)}°</CardContent>
+            <CardContent className="text-3xl font-bold text-center">
+                {data.main.feels_like.toFixed(0)}°
+            </CardContent>
             <CardFooter>
                 <p>{FeelsLike_Cmt(data.main.feels_like)}</p>
             </CardFooter>

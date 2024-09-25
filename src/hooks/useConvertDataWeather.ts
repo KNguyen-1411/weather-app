@@ -35,7 +35,7 @@ const setData = (data: IWeatherData) => {
         }
         date.setHours(hour);
         tempTime.day = dayNames[(currentDay + dayOffset) % 7];
-        tempTime.time = `${date.getHours()}:00:00`;
+        tempTime.time = `${date.getHours()}:00`;
         const temp = new Date();
         temp.setDate(temp.getDate() + dayOffset);
         tempTime.date = `${temp.getDate()}/${
@@ -43,8 +43,8 @@ const setData = (data: IWeatherData) => {
         }/${temp.getFullYear()}`;
 
         hour += 3;
-        if (tempTime.time !== 'NaN:00:00' && tempTime.date !== 'NaN/NaN/NaN') {
-            item.dt_txt = `${tempTime.day} ${tempTime.time} ${tempTime.date}`;
+        if (tempTime.time !== 'NaN:00' && tempTime.date !== 'NaN/NaN/NaN') {
+            item.dt_txt = `${tempTime.day}|${tempTime.time}|${tempTime.date}`;
         }
     });
 

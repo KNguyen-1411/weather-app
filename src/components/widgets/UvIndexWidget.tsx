@@ -16,7 +16,12 @@ export default function UvIndexWidget({ data }: UvIndexWidgetProps) {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <div>{data.daily.uv_index_max[0]}</div>
+                <div className="flex items-center mb-3 text-xl">
+                    <p className="mr-1 font-bold">
+                        {data.daily.uv_index_max[0]}{' '}
+                    </p>{' '}
+                    (Moderate)
+                </div>
                 <Progress value={data.daily.uv_index_max[0] * 5} />
             </CardContent>
             <CardFooter>

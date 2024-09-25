@@ -1,6 +1,6 @@
 import { IWeatherBaseData } from '@/types/global';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '../UI/card';
-import { Sunset } from 'lucide-react';
+import { Sunrise, Sunset } from 'lucide-react';
 
 interface SunsetWidgetProps {
     data: IWeatherBaseData;
@@ -23,33 +23,17 @@ export default function SunsetWidget({ data }: SunsetWidgetProps) {
                     Mặt trời lặn
                 </CardTitle>
             </CardHeader>
-            <CardContent className="p-0 relative">
+            <CardContent className="p-0 relative flex flex-col items-center">
+                <Sunset className="h-16 w-16 mb-2 animate-pulse" />
                 <div className="flex flex-col  px-4 justify-between h-full">
-                    <p className="text-2xl font-bold">
+                    <p className="text-xl font-bold">
                         {convertUnixTime(data.sys.sunset)}
                     </p>
                 </div>
-                <div className="flex flex-col justify-center absolute top-0 opacity-40">
-                    <svg width="100%" height="80">
-                        <path
-                            d="M 0 80 Q 120 -10, 170 50 T 400 100"
-                            stroke="white"
-                            strokeWidth="2"
-                            fill="transparent"
-                        />
-                        <line
-                            x1="0"
-                            y1="60"
-                            x2="100%"
-                            y2="60"
-                            stroke="white"
-                            strokeWidth="2"
-                        />
-                    </svg>
-                </div>
             </CardContent>
-            <CardFooter>
-                Mặt trời lặn {convertUnixTime(data.sys.sunrise)}
+            <CardFooter className="flex justify-center font-bold">
+                <Sunrise className="mr-2 w-5" />
+                {convertUnixTime(data.sys.sunrise)}
             </CardFooter>
         </>
     );

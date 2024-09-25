@@ -77,3 +77,25 @@
     @apply bg-background text-foreground;
     }
 }
+
+
+
+
+.scroll-fix::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px;
+}
+
+.scroll-fix::-webkit-scrollbar-track {
+  background: #ffffff1d;
+  border-radius: 10px; 
+}
+
+.scroll-fix::-webkit-scrollbar-thumb {
+  background: #a9a8a86e;
+  border-radius: 10px;
+}
+
+.scroll-fix::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
