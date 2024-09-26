@@ -53,33 +53,33 @@ export default function Start({
 
     return (
         <div className="App-main container mx-auto my-6">
-            <header className="mt-2 mb-6 flex justify-end">
+            <header className="mt-2 mb-6 flex justify-end mx-2">
                 <SearchCity />
                 <ToggleTheme />
             </header>
             <main>
-                <div className="grid grid-cols-11 grid-rows-10 gap-4">
-                    <div className="col-span-3 row-span-4">
+                <div className={styles.mainLayout}>
+                    <div className={styles.col1}>
                         <Card>
                             <WeatherWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-4 row-span-2 col-start-4">
+                    <div className={styles.col2}>
                         <Card>
                             <AirPollutionWidget data={dataAirPollution} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-8">
+                    <div className={styles.col3}>
                         <Card>
                             <SunsetWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-10">
+                    <div className={styles.col4}>
                         <Card>
                             <WindWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-4 row-span-2 col-start-4 row-start-3">
+                    <div className={styles.col5}>
                         <Card className="py-0">
                             {dataWeatherConvert && (
                                 <WeatherMapMiniWidget
@@ -88,53 +88,58 @@ export default function Start({
                             )}
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-8 row-start-3">
+                    <div className={styles.col6}>
                         <Card>
                             <UvIndexWidget data={dataUvIndex} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-10 row-start-3">
+                    <div className={styles.col7}>
                         <Card>
                             <LocationWidget data={dataGeocode} />
                         </Card>
                     </div>
-                    <div className="col-span-3 row-span-7 row-start-5">
+                    <div className={styles.col8}>
                         <Card>
                             {dataWeatherConvert && (
                                 <WeatherMapWidget data={dataWeather} />
                             )}
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-4 row-start-5">
+                    <div className={styles.col9}>
                         <Card>
                             <FeelsLikeWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-6 row-start-5">
+                    <div className={styles.col10}>
                         <Card>
                             <HumidityWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-8 row-start-5">
+                    <div className={styles.col11}>
                         <Card>
                             <VisibilityWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-2 col-start-10 row-start-5">
+                    <div className={styles.col12}>
                         <Card>
                             <PressureWidget data={dataBaseWeather} />
                         </Card>
                     </div>
-                    <div className="col-span-2 row-span-5 col-start-10 row-start-7">
+                    <div className={styles.col13}>
                         <Card>
                             <TopCityWidget />
                         </Card>
                     </div>
-                    <div className="col-span-6 row-span-5 col-start-4 row-start-7 overflow-hidden rounded-lg border border-slate-500">
+                    <div
+                        className={`${styles.col14} rounded-lg border border-slate-500`}
+                    >
                         <Map data={dataGeocode} />
                     </div>
                 </div>
             </main>
+            <footer className="mt-6 text-center text-xs text-gray-500">
+                © 2024 - Weather App by Khánh Nguyên
+            </footer>
         </div>
     );
 }

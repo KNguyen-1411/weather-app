@@ -1,0 +1,137 @@
+.mainLayout{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap:16px;
+    margin: 0 10px;
+}
+.col1{
+    grid-column: span 3 / span 3;
+    grid-row: span 4 / span 4;
+}
+.col2{
+    grid-column: span 4 / span 4;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+}
+.col3{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 8;
+}
+.col4{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 10;
+}
+.col5{
+    grid-column: span 4 / span 4;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 3;
+}
+.col6{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 8;
+    grid-row-start: 3;
+}
+.col7{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 10;
+    grid-row-start: 3;
+}
+.col8{
+    grid-column: span 3 / span 3;
+    grid-row: span 7 / span 7;
+    grid-row-start: 5;
+}
+.col9{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 5;
+}
+.col10{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-row-start: 5;
+}
+.col11{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 8;
+    grid-row-start: 5;
+    
+}
+.col12{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 10;
+    grid-row-start: 5;
+}
+.col13{
+    grid-column: span 2 / span 2;
+    grid-row: span 5 / span 5;
+    grid-column-start: 10;
+    grid-row-start: 7;
+}
+.col14{
+    grid-column: span 6 / span 6;
+    grid-row: span 5 / span 5;
+    grid-column-start: 4;
+    grid-row-start: 7;   
+    overflow: hidden;
+}
+@media (max-width:1200px){
+    .mainLayout{
+        display: flex;
+        flex-direction: column;
+    }
+    .col1{
+        order: 1;
+    }
+    .col2{
+        order: 3;
+    }
+    .col3{
+        order: 10;
+    }
+    .col4{
+        order: 8;
+    }
+    .col5{
+        order: 2;
+    }
+    .col6{
+        order: 5;
+    }
+    .col7{
+        order: 10;
+    }
+    .col8{
+        order: 9;
+    }
+    .col9{
+        order: 4;
+    }
+    .col10{
+        order: 6;
+    }
+    .col11{
+        order: 11;
+    }
+    .col12{
+        order: 12;
+    }
+    .col13{
+        order: 14;
+    }
+    .col14{
+        height: 300px;
+        order: 13;
+    }
+
+}
