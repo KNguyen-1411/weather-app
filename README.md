@@ -50,17 +50,13 @@ _Dự án được phát triển bởi Khánh Nguyên._
 npm install
 yarn dev
 ```
-
 -   File .env được công khai để sử dụng
 
 ## Liên hệ
 
 -   Mọi phản hồi liên hệ đến Khánh Nguyên
+  
 
-## Giấy Phép
-
-Dự án này được cấp phép theo Giấy phép MIT. Xem tệp LICENSE để biết chi tiết.
-
-    Hoàn thành 21/9/2024
+    Hoàn thành 26/9/2024
 
 _Cảm ơn bạn đã xem qua Chat App! Chúng tôi hy vọng bạn thấy nó hữu ích và thú vị. Chúc bạn lập trình vui vẻ!_
