@@ -1,11 +1,6 @@
 'use client';
 import { IWeatherData } from '@/types/global';
-import { useEffect, useState } from 'react';
-interface IWeatherProps {
-    data: IWeatherData;
-}
-
-const setData = (data: IWeatherData) => {
+export const setData = (data: IWeatherData) => {
     const dateH = new Date();
     const currentHour = dateH.getHours();
     const currentDay = dateH.getDay();
@@ -55,22 +50,4 @@ const setData = (data: IWeatherData) => {
     });
 
     return data;
-};
-export const useConvertDataWeather = ({ data }: IWeatherProps) => {
-    const [convertedData, setConvertedData] = useState<IWeatherData | null>(
-        null,
-    );
-    const [loading, setLoading] = useState<boolean>(false);
-    useEffect(() => {
-        if (data) {
-            const newData = setData(data);
-            setConvertedData(newData);
-        }
-        setLoading(true);
-    }, [data]);
-
-    return {
-        loading,
-        dataWeatherConvert: convertedData,
-    };
 };

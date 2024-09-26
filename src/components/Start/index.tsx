@@ -20,13 +20,13 @@ import VisibilityWidget from '@/components/widgets/VisibilityWidget';
 import WeatherWidget from '@/components/widgets/WeatherWidget';
 import AirPollutionWidget from '@/components/widgets/AirPollutionWidget';
 import WeatherMapWidget from '@/components/widgets/WeatherMapWidget';
-import { useConvertDataWeather } from '@/hooks/useConvertDataWeather';
 import WeatherMapMiniWidget from '@/components/widgets/WeatherMapMiniWidget';
 import TopCityWidget from '@/components/widgets/TopCityWidget';
 const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 import React from 'react';
 import { ToggleTheme } from '@/components/UI/ToogleTheme';
 import styles from './Layout.module.css';
+import { setData } from '@/lib/convertData';
 interface StartProps {
     SearchOK?: boolean;
     dataWeather: IWeatherData;
@@ -43,10 +43,7 @@ export default function Start({
     dataUvIndex,
     dataAirPollution,
 }: StartProps) {
-    const { dataWeatherConvert, loading } = useConvertDataWeather({
-        data: dataWeather,
-    });
-
+    const dataWeatherConvert = setData(dataWeather);
     // Neu tim kiem khong thanh cong!
     React.useEffect(() => {
         if (!SearchOK) {
@@ -84,7 +81,7 @@ export default function Start({
                     </div>
                     <div className="col-span-4 row-span-2 col-start-4 row-start-3">
                         <Card className="py-0">
-                            {loading && dataWeatherConvert && (
+                            {dataWeatherConvert && (
                                 <WeatherMapMiniWidget
                                     data={dataWeatherConvert}
                                 />
@@ -103,7 +100,7 @@ export default function Start({
                     </div>
                     <div className="col-span-3 row-span-7 row-start-5">
                         <Card>
-                            {loading && dataWeatherConvert && (
+                            {dataWeatherConvert && (
                                 <WeatherMapWidget data={dataWeather} />
                             )}
                         </Card>

@@ -27,9 +27,9 @@ export default function WeatherMapMiniWidget({
 }: WeatherMapMiniWidgetProps) {
     return (
         <CardContent className="flex overflow-y-hidden py-4 scroll-fix flex-1 overflow-x-scroll">
-            {data.list.slice(1).map((item) => (
+            {data.list.slice(1, 10).map((item, index) => (
                 <WeatherItem
-                    key={item.dt}
+                    key={index}
                     id={item.weather[0].id}
                     temp={item.main.temp}
                     time={item.dt_txt.split('|')[1]}

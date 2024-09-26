@@ -36,7 +36,11 @@ export default function SearchCity() {
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                     />
-                    <Button type="submit" variant={'secondary'}>
+                    <Button
+                        type="submit"
+                        variant={'secondary'}
+                        className="border dark:invert"
+                    >
                         Search
                     </Button>
                 </div>
