@@ -29,7 +29,7 @@ export default function SearchCity() {
     return (
         <div className="mx-4">
             <form onSubmit={handleSearch}>
-                <div className="flex w-96 items-center space-x-2">
+                <div className="flex max-w-96 items-center space-x-2">
                     <Input
                         type="text"
                         placeholder="Enter city name"
