@@ -28,11 +28,11 @@ const checkConnect = async () => {
 };
 
 export async function middleware(request: NextRequest) {
-    const isErrorPage = request.nextUrl.pathname === '/500';
+    const isErrorPage = request.nextUrl.pathname === '/error';
     const isConnect = await checkConnect();
 
     if (isConnect && isErrorPage) {
-        return NextResponse.redirect(new URL('/', request.url));
+        return NextResponse.redirect(new URL('/error', request.url));
     }
     if (!isConnect) {
         return NextResponse.redirect(new URL('/500', request.url));
