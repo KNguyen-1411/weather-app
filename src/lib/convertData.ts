@@ -1,11 +1,6 @@
 'use client';
 import { IWeatherData } from '@/types/global';
-import { useEffect, useState } from 'react';
-interface IWeatherProps {
-    data: IWeatherData;
-}
-
-const setData = (data: IWeatherData) => {
+export const setData = (data: IWeatherData) => {
     const dateH = new Date();
     const currentHour = dateH.getHours();
     const currentDay = dateH.getDay();
@@ -35,7 +30,7 @@ const setData = (data: IWeatherData) => {
         }
         date.setHours(hour);
         tempTime.day = dayNames[(currentDay + dayOffset) % 7];
-        tempTime.time = `${date.getHours()}:00:00`;
+        tempTime.time = `${date.getHours()}:00`;
         const temp = new Date();
         temp.setDate(temp.getDate() + dayOffset);
         tempTime.date = `${temp.getDate()}/${
@@ -43,8 +38,8 @@ const setData = (data: IWeatherData) => {
         }/${temp.getFullYear()}`;
 
         hour += 3;
-        if (tempTime.time !== 'NaN:00:00' && tempTime.date !== 'NaN/NaN/NaN') {
-            item.dt_txt = `${tempTime.day} ${tempTime.time} ${tempTime.date}`;
+        if (tempTime.time !== 'NaN:00' && tempTime.date !== 'NaN/NaN/NaN') {
+            item.dt_txt = `${tempTime.day}|${tempTime.time}|${tempTime.date}`;
         }
     });
 
@@ -55,22 +50,4 @@ const setData = (data: IWeatherData) => {
     });
 
     return data;
-};
-export const useConvertDataWeather = ({ data }: IWeatherProps) => {
-    const [convertedData, setConvertedData] = useState<IWeatherData | null>(
-        null,
-    );
-    const [loading, setLoading] = useState<boolean>(false);
-    useEffect(() => {
-        if (data) {
-            const newData = setData(data);
-            setConvertedData(newData);
-        }
-        setLoading(true);
-    }, [data]);
-
-    return {
-        loading,
-        dataWeatherConvert: convertedData,
-    };
 };

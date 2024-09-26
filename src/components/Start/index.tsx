@@ -20,10 +20,13 @@ import VisibilityWidget from '@/components/widgets/VisibilityWidget';
 import WeatherWidget from '@/components/widgets/WeatherWidget';
 import AirPollutionWidget from '@/components/widgets/AirPollutionWidget';
 import WeatherMapWidget from '@/components/widgets/WeatherMapWidget';
-import { useConvertDataWeather } from '@/hooks/useConvertDataWeather';
 import WeatherMapMiniWidget from '@/components/widgets/WeatherMapMiniWidget';
+import TopCityWidget from '@/components/widgets/TopCityWidget';
 const Map = dynamic(() => import('@/components/widgets/Map'), { ssr: false });
 import React from 'react';
+import { ToggleTheme } from '@/components/UI/ToogleTheme';
+import styles from './Layout.module.css';
+import { setData } from '@/lib/convertData';
 interface StartProps {
     SearchOK?: boolean;
     dataWeather: IWeatherData;
@@ -40,24 +43,22 @@ export default function Start({
     dataUvIndex,
     dataAirPollution,
 }: StartProps) {
-    const { dataWeatherConvert, loading } = useConvertDataWeather({
-        data: dataWeather,
-    });
-
+    const dataWeatherConvert = setData(dataWeather);
     // Neu tim kiem khong thanh cong!
-    // React.useEffect(() => {
-    //     if (!SearchOK) {
-    //         alert('Tìm kiếm không thành công!');
-    //     }
-    // }, [SearchOK]);
+    React.useEffect(() => {
+        if (!SearchOK) {
+            alert('Tìm kiếm không thành công!');
+        }
+    }, [SearchOK]);
 
     return (
-        <div className="App-main container mx-auto">
-            <header className="mt-2 mb-4 flex justify-end">
+        <div className="App-main container mx-auto my-6">
+            <header className="mt-2 mb-6 flex justify-end">
                 <SearchCity />
+                <ToggleTheme />
             </header>
             <main>
-                <div className="grid grid-cols-11 grid-rows-11 gap-4">
+                <div className="grid grid-cols-11 grid-rows-10 gap-4">
                     <div className="col-span-3 row-span-4">
                         <Card>
                             <WeatherWidget data={dataBaseWeather} />
@@ -79,8 +80,8 @@ export default function Start({
                         </Card>
                     </div>
                     <div className="col-span-4 row-span-2 col-start-4 row-start-3">
-                        <Card>
-                            {loading && dataWeatherConvert && (
+                        <Card className="py-0">
+                            {dataWeatherConvert && (
                                 <WeatherMapMiniWidget
                                     data={dataWeatherConvert}
                                 />
@@ -99,7 +100,7 @@ export default function Start({
                     </div>
                     <div className="col-span-3 row-span-7 row-start-5">
                         <Card>
-                            {loading && dataWeatherConvert && (
+                            {dataWeatherConvert && (
                                 <WeatherMapWidget data={dataWeather} />
                             )}
                         </Card>
@@ -125,12 +126,12 @@ export default function Start({
                         </Card>
                     </div>
                     <div className="col-span-2 row-span-5 col-start-10 row-start-7">
-                        <Card>top location</Card>
-                    </div>
-                    <div className="col-span-6 row-span-5 col-start-4 row-start-7">
                         <Card>
-                            <Map data={dataGeocode} />
+                            <TopCityWidget />
                         </Card>
+                    </div>
+                    <div className="col-span-6 row-span-5 col-start-4 row-start-7 overflow-hidden rounded-lg border border-slate-500">
+                        <Map data={dataGeocode} />
                     </div>
                 </div>
             </main>

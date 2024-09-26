@@ -17,7 +17,6 @@ export default function SearchCity() {
     const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const params = new URLSearchParams(searchParams.toString());
-
         if (city) {
             params.set('city', city);
         } else {
@@ -28,7 +27,7 @@ export default function SearchCity() {
     };
 
     return (
-        <div>
+        <div className="mx-4">
             <form onSubmit={handleSearch}>
                 <div className="flex w-96 items-center space-x-2">
                     <Input
@@ -37,7 +36,11 @@ export default function SearchCity() {
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                     />
-                    <Button type="submit" variant={'secondary'}>
+                    <Button
+                        type="submit"
+                        variant={'secondary'}
+                        className="border dark:invert"
+                    >
                         Search
                     </Button>
                 </div>
