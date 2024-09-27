@@ -2,6 +2,8 @@
 
 **Weather App** là ứng dụng theo dõi thời tiết được phát triển bằng Next.js, mang đến trải nghiệm người dùng thú vị và trực quan.
 
+Link demo: https://weather-app-five-nu-29.vercel.app
+
 ### Giới thiệu
 
 Ứng dụng tích hợp nhiều thư viện hỗ trợ như Shadcn UI, Tailwind, Next Theme và Lucide Icons để tạo ra một giao diện đẹp mắt và phong cách.
